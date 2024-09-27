@@ -173,8 +173,8 @@ public class MinesweeperGame {
         }
 
         for (int i = 0; i < LAND_MINE_COUNT; i++) {
-            int col = new Random().nextInt(BOARD_ROW_SIZE);
-            int row = new Random().nextInt(BOARD_COL_SIZE);
+            int col = new Random().nextInt(BOARD_COL_SIZE);
+            int row = new Random().nextInt(BOARD_ROW_SIZE);
             LAND_MINES[row][col] = true;
         }
 

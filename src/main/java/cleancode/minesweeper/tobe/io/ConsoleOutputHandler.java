@@ -1,6 +1,6 @@
 package cleancode.minesweeper.tobe.io;
 
-import cleancode.minesweeper.tobe.Cell;
+import cleancode.minesweeper.tobe.GameBoard;
 import cleancode.minesweeper.tobe.GameException;
 
 public class ConsoleOutputHandler {
@@ -14,12 +14,12 @@ public class ConsoleOutputHandler {
     /**
      * 파라미터로 row 크기, col 크기, board 인자 세 개를 받을 필요 없이, Cell 객체 하나만 받아서 사용하면 됨
      */
-    public void showBoard(Cell[][] board) {
+    public void showBoard(GameBoard board) {
         System.out.println("   a b c d e f g h i j");
-        for (int row = 0; row < board.length; row++) {
+        for (int row = 0; row < board.getRowSize(); row++) {
             System.out.printf("%d  ", row + 1);
-            for (int col = 0; col < board[row].length; col++) {
-                System.out.print(board[row][col].getSign() + " ");
+            for (int col = 0; col < board.getColSize(); col++) {
+                System.out.print(board.getSign(row, col) + " ");
             }
             System.out.println();
         }
